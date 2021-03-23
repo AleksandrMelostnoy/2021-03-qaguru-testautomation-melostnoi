@@ -16,7 +16,6 @@ public class StudentRegistrationForm {
             monthOfBirth = "May",
             yearOfBirth = "1988",
             dayOfBirth = "10",
-            dayOfWeekOfBirth = "Tuesday",
             subject1 = "Chemistry",
             subject2 = "Commerce",
             hobby1 = "Sports",
@@ -39,13 +38,11 @@ public class StudentRegistrationForm {
         $("#lastName").val(lastName);
         $("#userEmail").val(email);
         $("#genterWrapper").$(byText(gender)).click();
-
         $("#userNumber").val(mobile);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption(monthOfBirth);
         $(".react-datepicker__year-select").selectOption(yearOfBirth);
-        $(String.format("[aria-label='Choose %s, %s %sth, %s']",
-                dayOfWeekOfBirth, monthOfBirth, dayOfBirth, yearOfBirth)).click();
+        $x("//*[@aria-label='Choose Tuesday, May 10th, 1988' and not(@class='react-datepicker__day--outside-month')]").click();
         $("#subjectsInput").val(subject1).pressEnter();
         $("#subjectsInput").val(subject2);
         $(".subjects-auto-complete__menu-list").$(byText(subject2)).click();
@@ -58,14 +55,10 @@ public class StudentRegistrationForm {
         $("#stateCity-wrapper").$(byText(state)).click();
         $("#city").click();
         $("#stateCity-wrapper").$(byText(city)).click();
-
         $("#submit").click();
 
         // Then / Verify successful form submit
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text(firstName + " " + lastName),
-                text(email), text(gender));
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text(firstName + " " + lastName));
         $x("//td[text()='Student Name']").parent().shouldHave(text(firstName + " " + lastName));
         $x("//td[text()='Student Email']").parent().shouldHave(text(email));
         $x("//td[text()='Gender']").parent().shouldHave(text(gender));
