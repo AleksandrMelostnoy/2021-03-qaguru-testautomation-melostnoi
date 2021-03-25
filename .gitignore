@@ -28,7 +28,7 @@
 .allure/
 .gradle/
 allure-results/
-gradle/
+Homework02/gradle/
 build/
 bin/
 out/
