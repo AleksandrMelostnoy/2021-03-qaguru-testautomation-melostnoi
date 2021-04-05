@@ -5,3 +5,4 @@ Homework01 - added a screenshot of the passed Selenide autotest
 
 Homework02 - added test for form on https://demoqa.com/automation-practice-form
 
+Homework07 - work with git
