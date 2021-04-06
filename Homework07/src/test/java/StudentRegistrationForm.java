@@ -10,7 +10,7 @@ public class StudentRegistrationForm {
 
     String firstName = "Egor",
             lastName = "Alexov",
-            email = "aa@aa.com",
+            email = "aa1@aa.com",
             gender = "Other",
             mobile = "1234567890",
             monthOfBirth = "May",
