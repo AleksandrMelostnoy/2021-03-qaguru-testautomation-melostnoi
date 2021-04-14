@@ -7,12 +7,14 @@ repositories {
 }
 
 def selenideVersion = "5.19.0",
-    junitVersion = "5.7.1"
+    junitVersion = "5.7.1",
+    typeSafeConfig = "1.4.1"
 
 dependencies {
     testImplementation (
             "com.codeborne:selenide:$selenideVersion",
-            "org.junit.jupiter:junit-jupiter-api:$junitVersion")
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
+            "com.typesafe:config:$typeSafeConfig")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
 }
 
